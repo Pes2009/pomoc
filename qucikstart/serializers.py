@@ -28,11 +28,11 @@ class WordsSerializer(serializers.ModelSerializer):
 
 
 class CategoriesSerializer(serializers.ModelSerializer):
-    # words = serializers.SlugRelatedField(
-    #     many=True,
-    #     queryset= Words.objects.all(),
-    #     slug_field='value'
-    #  )
+    words = serializers.SlugRelatedField(
+        many=True,
+        queryset= Words.objects.all(),
+        slug_field='value'
+     )
     class Meta:
         model = Categories
         fields = ('name', 'words','id')
